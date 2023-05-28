@@ -1,0 +1,23 @@
+grep -Eoc '(vmx|smv)' /proc/cpuinfo
+
+sudo apt update
+sude apt install cpuchecker
+
+kvm-ok
+
+sudo apt install qemu-kvm libvirt-bin bridge-utils virtinst virt-manager
+
+#qemu-kvm - software that provides hardware emulation for the KVM hypervisor.
+#libvirt-bin - software for managing virtualization platforms.
+#bridge-utils - a set of command-line tools for configuring ethernet bridges.
+#virtinst - a set of command-line tools for creating virtual machines.
+#virt-manager provides an easy-to-use GUI interface and supporting command-line utilities for managing virtual machines through libvirt.
+
+sudo systemctl is-active libvirtd
+
+sudo usermod -aG libvirt $USER
+sudo usermod -aG kvm $USER
+
+brctl show
+
+virt-manager
